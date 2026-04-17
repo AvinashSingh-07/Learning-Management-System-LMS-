@@ -6,7 +6,7 @@ const connectDB = async () => {
             console.log("Database Connected")
         );
 
-        const uri = process.env.MONGODB_URI?.trim();
+        const uri = process.env.MONGODB_URI;
         if (!uri) {
             console.error("MONGODB_URI is not set in environment");
             process.exit(1);
