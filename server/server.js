@@ -12,8 +12,8 @@ const app = express()
 await connectDB()
 
 const allowedOrigins = [
-  'http://localhost:5173', 
-  'http://localhost:5174', 
+  'http://localhost:5173',
+  'http://localhost:5174',
   'https://learning-management-system-lms-sage.vercel.app',
   process.env.CORS_ORIGIN
 ].filter(Boolean)
@@ -41,7 +41,7 @@ server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
     console.error(
       `Port ${PORT} is already in use. Another server is running, or a stale node process is holding it.\n` +
-        `Free it:  lsof -ti :${PORT} | xargs kill -9`
+      `Free it:  lsof -ti :${PORT} | xargs kill -9`
     )
   } else {
     console.error(err)
