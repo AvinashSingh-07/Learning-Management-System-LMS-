@@ -11,9 +11,15 @@ const app = express()
 
 await connectDB()
 
-const allowedOrigin = process.env.CORS_ORIGIN || '*'
+const allowedOrigins = [
+  'http://localhost:5173', 
+  'http://localhost:5174', 
+  'https://learning-management-system-lms-sage.vercel.app',
+  process.env.CORS_ORIGIN
+].filter(Boolean)
+
 app.use(cors({
-  origin: allowedOrigin,
+  origin: allowedOrigins,
   credentials: true,
 }))
 
